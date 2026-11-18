@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 송년행사 초대장 | 삼성소리샘복지관</title>
+<meta name="description" content="12월 5일(토) 10:00–12:00, 삼성소리샘복지관 2026 송년행사 '당신 덕분에'에 초대합니다.">
+<meta property="og:title" content="2026 송년행사 “당신 덕분에”">
+<meta property="og:description" content="12월 5일(토) 10:00–12:00, 삼성소리샘복지관">
+<meta property="og:image" content="images/1.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --felt: #a3182b;
+    --felt-deep: #7e1020;
+    --paper: #f3e7d1;
+    --paper-hi: #fbf4e6;
+    --pine: #1e3a2c;
+    --pine-deep: #142a1f;
+    --holly: #b3202e;
+    --ink: #4a2a1e;
+    --gold: #d4ad57;
+    --footer: #212a34;
+    --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --fleck: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.04' numOctaves='4'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .4 0 0 0 0 .25 0 0 0 .35 -.05'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: "Gowun Dodum", "Noto Sans KR", sans-serif;
+    color: var(--ink);
+    background: var(--felt);
+    line-height: 1.7;
+    word-break: keep-all;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  .band { position: relative; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 24px; position: relative; }
+
+  /* 질감: 펠트(빨강) / 종이(크림) / 솔잎(초록) */
+  .band--felt  { background: var(--noise), radial-gradient(120% 80% at 50% 0%, var(--felt) 0%, var(--felt-deep) 100%); background-blend-mode: multiply, normal; }
+  .band--paper { background: var(--noise), var(--fleck), var(--paper); background-blend-mode: multiply, multiply, normal; }
+  .band--pine  { background: var(--noise), radial-gradient(90% 60% at 50% 40%, #2a4a37 0%, var(--pine) 55%, var(--pine-deep) 100%); background-blend-mode: overlay, normal; }
+
+  .poster { padding: 24px 0; }
+  .poster img { width: 100%; box-shadow: 0 10px 30px rgba(60, 8, 14, .35); }
+  .band--paper .poster img { box-shadow: 0 6px 20px rgba(110, 80, 40, .18); }
+
+  h2 {
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    color: var(--holly);
+    font-size: clamp(2.6rem, 11vw, 3.6rem);
+    line-height: 1.1;
+    letter-spacing: -.01em;
+    margin: 0 0 .4em;
+    text-align: center;
+  }
+
+  /* ---------- 3. 신청방법 ---------- */
+  .apply { padding: 72px 0 80px; overflow: hidden; }
+  .lights { position: absolute; left: 0; right: 0; top: 0; height: 64px; pointer-events: none; }
+  .lights svg { width: 100%; height: 100%; }
+  .bulb { animation: twinkle 3.2s ease-in-out infinite; }
+  .bulb:nth-child(3n) { animation-delay: -1.1s; }
+  .bulb:nth-child(3n+1) { animation-delay: -2.2s; }
+  @keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
+  .card { position: relative; padding: 56px 28px 44px; text-align: center; }
+  .card::before {
+    content: ""; position: absolute; inset: 0;
+    background: var(--noise), var(--fleck), var(--paper-hi);
+    background-blend-mode: multiply, multiply, normal;
+    filter: url(#torn) drop-shadow(0 12px 24px rgba(0, 0, 0, .35));
+  }
+  .card > * { position: relative; }
+  .sprig { position: absolute; width: 112px; height: 112px; z-index: 1; }
+  .sprig--tl { top: -34px; left: -26px; }
+  .sprig--tr { top: -34px; right: -26px; transform: scaleX(-1); }
+  .sprig--bl { bottom: -50px; left: -22px; transform: scaleY(-1) rotate(10deg); }
+  .sprig--br { bottom: -50px; right: -22px; transform: scale(-1, -1) rotate(10deg); }
+
+  .lead { font-family: "Jua", sans-serif; font-size: 1.5rem; margin: 0 0 1.4rem; color: var(--ink); }
+  .contact { margin: 0 auto 1.6rem; display: grid; gap: .5rem; font-size: 1.12rem; }
+  .contact div { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 .5em; }
+  .contact dt { font-family: "Jua", sans-serif; }
+  .contact dd { margin: 0; }
+  .contact a { color: var(--holly); font-weight: 700; text-underline-offset: 3px; }
+  .deadline {
+    display: inline-block; margin: 0 0 1.2rem; padding: .35em 1em;
+    font-family: "Jua", sans-serif; font-size: 1.1rem; color: #fff;
+    background: var(--holly); border-radius: 999px;
+  }
+
+  .divider { display: flex; align-items: center; justify-content: space-between; width: min(100%, 360px); height: 10px; margin: 1.4rem auto; position: relative; }
+  .divider::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--holly); opacity: .7; }
+  .divider i { position: relative; width: 9px; height: 9px; background: var(--holly); transform: rotate(45deg); }
+  .divider i:first-child { margin-left: 18%; }
+  .divider i:last-child { margin-right: 18%; }
+
+  .howto p { margin: 0; font-size: 1.1rem; }
+  .howto .label { font-family: "Jua", sans-serif; font-size: 1.25rem; margin-bottom: .2rem; }
+  .sample {
+    margin: 1.4rem auto 0; padding: 14px 18px; max-width: 420px;
+    border: 1.5px dashed rgba(179, 32, 46, .5); border-radius: 14px;
+    font-size: 1.05rem; background: rgba(255, 255, 255, .45);
+  }
+  .howto .sample { margin: 1.4rem auto 0; }
+  .nw { white-space: nowrap; }
+  .sample strong { font-family: "Jua", sans-serif; font-weight: 400; display: block; color: var(--holly); }
+
+  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 2rem; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .4em;
+    min-height: 54px; padding: 0 16px; border-radius: 12px;
+    font: 400 1.15rem/1 "Jua", sans-serif; text-decoration: none; cursor: pointer;
+    border: 2px solid transparent; transition: transform .15s ease, background-color .15s ease;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn--holly { background: var(--holly); color: #fff; box-shadow: 0 3px 0 #7c1520; }
+  .btn--holly:hover { background: #c4283a; }
+  .btn--pine { background: var(--pine); color: var(--paper-hi); box-shadow: 0 3px 0 #0d1d14; }
+  .btn--pine:hover { background: #28503b; }
+  .btn--line { background: var(--paper-hi); color: var(--ink); border-color: rgba(74, 42, 30, .25); }
+  .btn--line:hover { border-color: var(--ink); }
+
+  /* ---------- 4. 오시는 길 ---------- */
+  .location { padding: 72px 0 64px; }
+  .location .sub { text-align: center; margin: -.4rem 0 1.6rem; font-size: 1.05rem; }
+  .map-frame {
+    position: relative; height: 420px; border-radius: 16px; overflow: hidden;
+    border: 6px solid var(--paper-hi); box-shadow: 0 0 0 1.5px rgba(179, 32, 46, .35), 0 10px 24px rgba(110, 80, 40, .22);
+    background: #e8e0d0;
+  }
+  #map, .map-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .infowin {
+    width: 220px; background: var(--paper-hi); border-radius: 12px; overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .28); border: 2px solid var(--holly);
+    font-family: "Gowun Dodum", sans-serif; color: var(--ink); text-align: left;
+  }
+  .infowin img { width: 100%; height: 88px; object-fit: cover; }
+  .infowin div { padding: 8px 12px 10px; line-height: 1.4; }
+  .infowin strong { display: block; font: 400 1.05rem "Jua", sans-serif; color: var(--holly); }
+  .infowin small { font-size: .8rem; }
+  .infowin-pos { position: absolute; transform: translate(-50%, calc(-100% - 44px)); }
+  .infowin-pos::after {
+    content: ""; position: absolute; left: 50%; bottom: -7px; width: 14px; height: 14px;
+    background: var(--paper-hi); border: solid var(--holly); border-width: 0 2px 2px 0;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  /* 키 없이 iframe일 때: 지도 중앙 핀 위에 고정 */
+  .map-frame.is-embed .infowin-pos { left: 50%; top: 50%; pointer-events: none; }
+  /* 임베드 지도는 드래그를 알 수 없어 고정 (API 키를 넣으면 마커를 따라다니는 지도로 바뀜) */
+  .map-frame.is-embed iframe { pointer-events: none; }
+  .zoom { position: absolute; right: 10px; bottom: 10px; display: flex; flex-direction: column; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, .25); }
+  .zoom button { width: 44px; height: 44px; border: 0; background: var(--paper-hi); color: var(--ink); font: 400 1.6rem/1 "Jua", sans-serif; cursor: pointer; }
+  .zoom button + button { border-top: 1px solid rgba(74, 42, 30, .2); }
+  .zoom button:hover { background: #fff; }
+  .zoom button:disabled { opacity: .4; cursor: default; }
+  .address {
+    margin: 1.2rem 0 0; padding: 14px 16px; border-radius: 12px;
+    background: rgba(255, 255, 255, .5); font-size: 1.05rem; text-align: center;
+  }
+  .address strong { font-family: "Jua", sans-serif; font-weight: 400; }
+  .map-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+  .map-actions .btn { font-size: 1.05rem; padding: 0 10px; white-space: nowrap; }
+  .map-actions .btn--copy { grid-column: 1 / -1; }
+  .btn--naver { background: #03c75a; color: #fff; }
+  .btn--naver:hover { background: #02b351; }
+  .btn--kakao { background: #fee500; color: #191600; }
+  .btn--kakao:hover { background: #f5dc00; }
+
+  /* ---------- 5. 공유 ---------- */
+  .share { padding: 64px 0 72px; text-align: center; color: var(--paper-hi); }
+  .share h2 { color: var(--paper-hi); font-size: clamp(2rem, 8.5vw, 2.7rem); }
+  .share p { margin: 0 0 1.6rem; font-size: 1.08rem; opacity: .9; }
+  .share-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .share-actions .btn { flex-direction: column; min-height: 92px; gap: .55em; font-size: 1rem; padding: 0 8px; }
+  .share-actions svg { width: 28px; height: 28px; }
+  .btn--glass { background: rgba(255, 255, 255, .1); color: #fff; border-color: rgba(255, 255, 255, .35); }
+  .btn--glass:hover { background: rgba(255, 255, 255, .18); }
+
+  /* ---------- 모달 ---------- */
+  dialog {
+    width: min(92vw, 440px); padding: 0; border: 0; border-radius: 18px;
+    background: var(--noise), var(--paper-hi); background-blend-mode: multiply, normal;
+    color: var(--ink); box-shadow: 0 20px 50px rgba(0, 0, 0, .4);
+  }
+  dialog::backdrop { background: rgba(20, 42, 31, .7); }
+  .dlg { padding: 28px 24px 24px; }
+  .dlg h3 { font: 400 1.7rem/1.2 "Jua", sans-serif; color: var(--holly); margin: 0 0 .3rem; text-align: center; }
+  .dlg .hint { text-align: center; margin: 0 0 1.2rem; font-size: .95rem; }
+  .field { margin-bottom: 12px; }
+  .field label, .field legend { display: block; font-family: "Jua", sans-serif; font-size: 1.02rem; margin-bottom: 4px; }
+  .field input[type=text], .field input[type=tel] {
+    width: 100%; height: 48px; padding: 0 12px; font: inherit; font-size: 1.05rem; color: var(--ink);
+    border: 1.5px solid rgba(74, 42, 30, .3); border-radius: 10px; background: #fff;
+  }
+  .field input:focus { border-color: var(--holly); outline: none; box-shadow: 0 0 0 3px rgba(179, 32, 46, .2); }
+  fieldset.field { border: 0; padding: 0; margin: 0 0 12px; }
+  .field .radios label { display: inline-flex; }
+  .radios { display: flex; gap: 18px; }
+  .radios label, .agree { display: inline-flex; align-items: center; gap: 6px; font-family: inherit; font-size: 1.02rem; cursor: pointer; }
+  .radios input, .agree input { width: 20px; height: 20px; accent-color: var(--holly); }
+  .agree { margin: 4px 0 2px; }
+  .agree-note { font-size: .82rem; margin: 0 0 16px 26px; opacity: .8; line-height: 1.5; }
+  .dlg-actions { display: grid; grid-template-columns: 1fr 2fr; gap: 8px; }
+  .result { margin: 14px 0 0; padding: 12px 14px; border-radius: 10px; background: rgba(30, 58, 44, .08); text-align: center; }
+  .result:empty { display: none; }
+
+  .toast {
+    position: fixed; left: 50%; bottom: 28px; z-index: 50; transform: translate(-50%, 20px);
+    padding: 12px 20px; border-radius: 999px; background: rgba(20, 42, 31, .94); color: #fff;
+    font-size: .98rem; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
+    max-width: calc(100vw - 32px); text-align: center;
+  }
+  .toast.is-on { opacity: 1; transform: translate(-50%, 0); }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* ---------- 푸터 (sorisaem.net #ft) ---------- */
+  #ft { background: var(--footer); color: #fff; font-family: "Noto Sans KR", sans-serif; }
+  #ft ul { list-style: none; margin: 0; padding: 0; }
+  #ft .link { border-bottom: 1px solid rgba(255, 255, 255, .1); }
+  #ft .link ul { display: flex; justify-content: center; padding: 16px 0; }
+  #ft .link li { padding: 3px 0; margin: 0 16px; }
+  #ft .link a { color: #d3d3d3; font-size: .9rem; text-decoration: none; }
+  #ft .link a:hover { color: #fff; }
+  #ft .copy { padding: 32px 24px 40px; text-align: center; color: #a1a1a1; font-size: .9rem; }
+  #ft .copy ul { display: flex; flex-wrap: wrap; justify-content: center; max-width: 640px; margin: 0 auto; }
+  #ft .copy li { margin: 0 .55em; }
+  #ft .copy li span { margin-right: .45em; }
+  #ft .copy .logo { flex-basis: 100%; height: 50px; margin-bottom: 16px; background: url("https://www.sorisaem.net/img/logo/bottom_logo.png?ver=250616") center / contain no-repeat; }
+  #ft .copy .addr { flex-basis: 100%; }
+  #ft .copy .copyright { display: none; }
+  #ft .social { display: flex; justify-content: space-around; max-width: 360px; margin: 24px auto 0; }
+  #ft .social a { color: #a1a1a1; font-size: 1.6rem; line-height: 1; }
+  #ft .social a:hover { color: #fff; }
+
+  /* ---------- 표지 ---------- */
+  body.is-gated { overflow: hidden; }
+  .gate { position: fixed; inset: 0; z-index: 40; background: var(--felt-deep); }
+  .gate-inner {
+    position: relative; height: 100%; max-width: 640px; margin: 0 auto;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+    padding: 0 48px; background: url("images/cover-bg.webp") center / cover no-repeat;
+  }
+  .cover-card {
+    position: relative; width: 100%; max-width: 360px; padding: 44px 20px 34px; text-align: center;
+    background: var(--noise), var(--paper-hi); background-blend-mode: multiply, normal;
+    box-shadow: 0 16px 40px rgba(40, 0, 6, .45);
+  }
+  .cover-card::before { content: ""; position: absolute; inset: 10px; border: 1.5px solid var(--holly); pointer-events: none; }
+  .cover-card .org { margin: 0 0 6px; font-size: .95rem; color: var(--ink); }
+  .cover-card h1 { margin: 0; font: 400 clamp(2.3rem, 10vw, 2.9rem)/1.15 "Jua", sans-serif; color: #8c1c24; }
+  .cover-card .quote { margin: 10px 0 14px; font: 400 clamp(1.6rem, 7vw, 2rem)/1.2 "Jua", sans-serif; color: var(--holly); }
+  .cover-card .when { margin: 0; font-size: 1rem; color: var(--holly); }
+  .cover-card .spark { position: absolute; top: 50%; width: 12px; height: 12px; margin-top: -6px; background: var(--holly); clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); }
+  .cover-card .spark--l { left: 4px; }
+  .cover-card .spark--r { right: 4px; }
+  .gate-open {
+    min-width: 220px; min-height: 60px; padding: 0 28px; border-radius: 999px; cursor: pointer;
+    font: 400 1.3rem/1 "Jua", sans-serif; color: var(--holly);
+    background: var(--paper-hi); border: 2px solid var(--gold);
+    box-shadow: 0 6px 20px rgba(40, 0, 6, .45), inset 0 0 0 3px var(--paper-hi), inset 0 0 0 4px rgba(212, 173, 87, .6);
+  }
+  .gate-open:hover { background: #fff; }
+  .flash { position: fixed; inset: 0; z-index: 60; background: #fff; display: none; }
+
+  /* ---------- 배경음악 ---------- */
+  .bgm {
+    position: fixed; top: 12px; right: max(12px, calc(50% - 320px + 12px)); z-index: 70;
+    width: 48px; height: 48px; border-radius: 50%; cursor: pointer; color: #fff;
+    background: rgba(30, 10, 12, .4); border: 1.5px solid rgba(255, 255, 255, .6);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    display: grid; place-items: center;
+  }
+  .bgm svg { width: 22px; height: 22px; }
+  .bgm .slash { display: block; }
+  .bgm[aria-pressed="true"] .slash { display: none; }
+  .bgm[aria-pressed="true"] { background: rgba(179, 32, 46, .75); }
+
+  @media (max-width: 420px) {
+    .gate-inner { padding: 0 36px; }
+    .card { padding: 52px 18px 40px; }
+    .map-actions { grid-template-columns: 1fr; }
+    .share-actions .btn { font-size: .92rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bulb { animation: none; }
+    .btn, .toast { transition: none; }
+  }
+</style>
+</head>
+<body class="is-gated">
+
+<!-- 표지 -->
+<section class="gate" id="gate" aria-label="초대장 표지">
+  <div class="gate-inner">
+    <div class="cover-card">
+      <i class="spark spark--l" aria-hidden="true"></i><i class="spark spark--r" aria-hidden="true"></i>
+      <p class="org">삼성소리샘복지관</p>
+      <h1>2026 송년행사</h1>
+      <p class="quote">“당신 덕분에”</p>
+      <p class="when">12월 5일(토) 10:00–12:00</p>
+    </div>
+    <button type="button" class="gate-open" id="gate-open">초대장 열기</button>
+  </div>
+</section>
+<div class="flash" id="flash" aria-hidden="true"></div>
+
+<button type="button" class="bgm" id="bgm" aria-pressed="false" aria-label="배경음악">
+  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>
+    <path class="slash" d="M3 3l18 18"/>
+  </svg>
+</button>
+<audio id="bgm-audio" src="jingle-bell.mp3" loop preload="none"></audio>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="torn" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="4" seed="7" result="t"/>
+    <feDisplacementMap in="SourceGraphic" in2="t" scale="22" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <symbol id="holly" viewBox="0 0 120 120">
+    <path d="M58 62c-8-14-24-22-44-20 6 4 4 10 10 12-6 3-6 8-1 11 5 3 10 0 12 6 3-6 9-3 12-8 2 4 8 4 11-1z" fill="#2f5a3a"/>
+    <path d="M58 62c-8-14-24-22-44-20" stroke="#1c3a25" stroke-width="1.5" fill="none"/>
+    <path d="M62 58c-2-16 6-32 24-42-1 7 5 9 4 15 5-3 10-1 9 5-1 6-7 7-5 13-6-2-8 5-14 4 3 4 0 10-6 9z" fill="#3b6b45"/>
+    <path d="M62 58c-2-16 6-32 24-42" stroke="#1c3a25" stroke-width="1.5" fill="none"/>
+    <path d="M64 66c14 4 26 16 30 34-6-4-11 0-15-5-1 6-6 7-10 3s-2-9-8-10c5-4 1-9 4-14-4 0-6-4-1-8z" fill="#264d31"/>
+    <circle cx="60" cy="62" r="8" fill="#c1272d"/><circle cx="70" cy="68" r="7" fill="#a51f26"/><circle cx="56" cy="72" r="6.5" fill="#d0333a"/>
+    <circle cx="57.5" cy="59.5" r="2" fill="#fff" opacity=".6"/><circle cx="68" cy="66" r="1.6" fill="#fff" opacity=".55"/>
+  </symbol>
+</svg>
+
+<main>
+  <!-- 1. 초대장 -->
+  <section class="band band--felt" aria-label="초대장">
+    <div class="wrap poster">
+      <img src="images/1.webp" width="1080" height="1350"
+        alt="2026 송년행사 “당신 덕분에”. 12월 5일(토) 10:00–12:00. 우리 삼성소리샘복지관을 이용해주신 많은 이용자분들께 감사드리며 송년행사에 안내합니다. 신청기간: 11/25(수)까지 문자, 전화, 방문 신청">
+    </div>
+  </section>
+
+  <!-- 2. 행사 소개 -->
+  <section class="band band--paper" aria-label="행사 소개">
+    <div class="wrap poster">
+      <img src="images/2.webp" width="1080" height="1350" loading="lazy"
+        alt="2026 송년행사. 당신 덕분에, 더 따뜻한 연말. 눈앞에서 펼쳐지는 신나는 마술쇼, 함께 나누는 정성껏 차린 다과, 그리고 한 해의 감사한 마음을 담아 준비한 풍성한 선물까지! 즐길 거리와 맛있는 간식이 가득한 소리샘 송년행사에 여러분을 초대합니다. 사진: 눈이 즐거운 마술쇼와 다양한 공연, 정성껏 차린 다과, 풍성하고 다양한 선물">
+    </div>
+  </section>
+
+  <!-- 3. 신청방법 -->
+  <section class="band band--pine apply" aria-labelledby="apply-title">
+    <div class="lights" aria-hidden="true">
+      <svg viewBox="0 0 640 64" preserveAspectRatio="none">
+        <path d="M0 8 Q80 44 160 14 T320 14 T480 14 T640 8" fill="none" stroke="#0e1f16" stroke-width="2"/>
+        <g fill="#f6d77a">
+          <circle class="bulb" cx="40" cy="24" r="5"/><circle class="bulb" cx="100" cy="30" r="5" fill="#ff8a7a"/>
+          <circle class="bulb" cx="160" cy="16" r="5"/><circle class="bulb" cx="220" cy="27" r="5" fill="#9fe0b0"/>
+          <circle class="bulb" cx="280" cy="22" r="5"/><circle class="bulb" cx="340" cy="18" r="5" fill="#ff8a7a"/>
+          <circle class="bulb" cx="400" cy="29" r="5"/><circle class="bulb" cx="460" cy="20" r="5" fill="#9fe0b0"/>
+          <circle class="bulb" cx="520" cy="25" r="5"/><circle class="bulb" cx="580" cy="22" r="5" fill="#ff8a7a"/>
+        </g>
+      </svg>
+    </div>
+    <div class="wrap">
+      <div class="card">
+        <svg class="sprig sprig--tl" aria-hidden="true"><use href="#holly"/></svg>
+        <svg class="sprig sprig--tr" aria-hidden="true"><use href="#holly"/></svg>
+        <svg class="sprig sprig--bl" aria-hidden="true"><use href="#holly"/></svg>
+        <svg class="sprig sprig--br" aria-hidden="true"><use href="#holly"/></svg>
+
+        <h2 id="apply-title">신청방법</h2>
+        <p class="lead">문자, 전화, 방문 신청</p>
+        <p class="deadline">11월 25일(수)까지 신청</p>
+
+        <dl class="contact">
+          <div><dt>전화&amp;문자</dt><dd><a href="tel:028241411">02-824-1411</a></dd></div>
+          <div><dt>방문</dt><dd>삼성소리샘복지관 2층 사무실</dd></div>
+          <div><dt>담당</dt><dd>조수연 사회복지사</dd></div>
+        </dl>
+
+        <div class="divider" aria-hidden="true"><i></i><i></i><i></i></div>
+
+        <div class="howto">
+          <p class="label">이렇게 보내주세요!</p>
+          <p>이름 / 생년월일 / 핸드폰번호 /<br>참여 가족 수 / 문자 수신 동의</p>
+          <p class="sample"><strong>문자 예시</strong><span class="nw">홍길동/99.12.05./</span><span class="nw">010-1234-5678</span><br><span class="nw">/나, 엄마, 아빠 3명/네</span></p>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn btn--holly" data-open="dlg-apply">참가 신청하기</button>
+          <button type="button" class="btn btn--pine" data-open="dlg-check">신청확인</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 오시는 길 -->
+  <section class="band band--paper location" aria-labelledby="loc-title">
+    <div class="wrap">
+      <h2 id="loc-title">오시는 길</h2>
+      <p class="sub">12월 5일(토) 오전 10시, 이곳에서 만나요</p>
+      <div class="map-frame" id="map-frame">
+        <div id="map" role="region" aria-label="삼성소리샘복지관 위치 지도"></div>
+      </div>
+      <p class="address"><strong>삼성소리샘복지관</strong><br>서울특별시 동작구 양녕로30길 19-4<br>(상도동 212-128)</p>
+      <div class="map-actions">
+        <a class="btn btn--naver" id="btn-naver" target="_blank" rel="noopener">네이버지도로 길찾기 ↗</a>
+        <a class="btn btn--kakao" id="btn-kakao" target="_blank" rel="noopener">카카오맵으로 길찾기 ↗</a>
+        <button type="button" class="btn btn--line btn--copy" data-copy="서울특별시 동작구 양녕로30길 19-4 (상도동 212-128) 삼성소리샘복지관" data-msg="주소를 복사했어요">주소 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 공유 -->
+  <section class="band band--felt share" aria-labelledby="share-title">
+    <div class="wrap">
+      <h2 id="share-title">초대장 공유하기</h2>
+      <p>함께 오고 싶은 분께 초대장을 보내주세요</p>
+      <div class="share-actions">
+        <button type="button" class="btn btn--kakao" id="btn-kakao-share">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
+          카카오톡 공유
+        </button>
+        <button type="button" class="btn btn--glass" id="btn-share">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+          공유하기
+        </button>
+        <button type="button" class="btn btn--glass" id="btn-link">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+          링크 복사
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 참가 신청 -->
+<dialog id="dlg-apply" aria-labelledby="dlg-apply-title">
+  <form class="dlg" id="form-apply" novalidate>
+    <h3 id="dlg-apply-title">참가 신청하기</h3>
+    <p class="hint">11월 25일(수)까지 받아요</p>
+    <div class="field"><label for="a-name">이름</label><input type="text" id="a-name" name="name" required autocomplete="name"></div>
+    <div class="field"><label for="a-birth">생년월일 (예: 99.12.05)</label><input type="text" id="a-birth" name="birth" required inputmode="numeric" placeholder="99.12.05"></div>
+    <div class="field"><label for="a-phone">핸드폰번호</label><input type="tel" id="a-phone" name="phone" required autocomplete="tel" placeholder="010-1234-5678" pattern="01[0-9]-?[0-9]{3,4}-?[0-9]{4}"></div>
+    <div class="field"><label for="a-family">참여 가족 (예: 나, 엄마, 아빠 3명)</label><input type="text" id="a-family" name="family" required></div>
+    <fieldset class="field">
+      <legend>문자 수신 동의</legend>
+      <div class="radios">
+        <label><input type="radio" name="sms" value="네" required checked> 네</label>
+        <label><input type="radio" name="sms" value="아니오"> 아니오</label>
+      </div>
+    </fieldset>
+    <label class="agree"><input type="checkbox" name="privacy" required> 개인정보 수집·이용에 동의합니다</label>
+    <p class="agree-note">수집 항목: 이름, 생년월일, 핸드폰번호, 참여 가족 수<br>이용 목적: 송년행사 참가 접수와 안내, 행사 종료 후 파기</p>
+    <div class="dlg-actions">
+      <button type="button" class="btn btn--line" data-close>닫기</button>
+      <button type="submit" class="btn btn--holly">신청하기</button>
+    </div>
+    <p class="result" role="status"></p>
+  </form>
+</dialog>
+
+<!-- 신청 확인 -->
+<dialog id="dlg-check" aria-labelledby="dlg-check-title">
+  <form class="dlg" id="form-check" novalidate>
+    <h3 id="dlg-check-title">신청확인</h3>
+    <p class="hint">신청할 때 적은 이름과 번호를 입력하세요</p>
+    <div class="field"><label for="c-name">이름</label><input type="text" id="c-name" name="name" required autocomplete="name"></div>
+    <div class="field"><label for="c-phone">핸드폰번호</label><input type="tel" id="c-phone" name="phone" required autocomplete="tel" placeholder="010-1234-5678" pattern="01[0-9]-?[0-9]{3,4}-?[0-9]{4}"></div>
+    <div class="dlg-actions">
+      <button type="button" class="btn btn--line" data-close>닫기</button>
+      <button type="submit" class="btn btn--pine">확인하기</button>
+    </div>
+    <p class="result" role="status"></p>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- 푸터: sorisaem.net #ft 와 동일 -->
+<footer id="ft">
+  <div class="link">
+    <ul>
+      <li><a href="https://www.sorisaem.net/privacy" title="개인정보처리방침">개인정보처리방침</a></li>
+      <li><a href="https://www.sorisaem.net/stipulation" title="이용약관">이용약관</a></li>
+      <li><a href="https://www.sorisaem.net/4090" title="오시는길">오시는길</a></li>
+    </ul>
+  </div>
+  <div class="copy">
+    <ul>
+      <li class="logo" title="삼성소리샘복지관 로고"><span class="sr-only">삼성소리샘복지관</span></li>
+      <li class="addr">07035 서울 동작구 양녕로30길 19-4 삼성소리샘복지관</li>
+      <li><span>대표전화</span>02-824-1414</li>
+      <li><span>영상전화</span>070-7947-0232</li>
+      <li><span>팩스</span>02-826-5044</li>
+      <li><span>이메일</span>sorisaem1@nate.com</li>
+      <li class="copyright">Copyright © 2026 삼성소리샘복지관. All rights Reserved. <a href="https://hiwelfare.co.kr" target="_blank" rel="noopener">Designed by hihompy.</a></li>
+    </ul>
+    <div class="social">
+      <a href="https://www.facebook.com/people/%EC%82%BC%EC%84%B1%EC%86%8C%EB%A6%AC%EC%83%98%EB%B3%B5%EC%A7%80%EA%B4%80/100076467866794/" target="_blank" rel="noopener" title="페이스북 바로가기"><iconify-icon icon="brandico:facebook-rect"></iconify-icon></a>
+      <a href="https://www.instagram.com/samsungsorisaem/" target="_blank" rel="noopener" title="인스타그램 바로가기"><iconify-icon icon="ant-design:instagram-filled"></iconify-icon></a>
+      <a href="https://pf.kakao.com/_kZufs" target="_blank" rel="noopener" title="카카오톡 바로가기"><iconify-icon icon="simple-icons:kakaotalk"></iconify-icon></a>
+      <a href="https://www.youtube.com/c/%EC%82%BC%EC%84%B1%EC%86%8C%EB%A6%AC%EC%83%98%EB%B3%B5%EC%A7%80%EA%B4%80" target="_blank" rel="noopener" title="유튜브 바로가기"><iconify-icon icon="fa6-brands:square-youtube"></iconify-icon></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" crossorigin="anonymous"></script>
+<script>
+  // 운영 전에 채워주세요
+  var CONFIG = {
+    googleMapsKey: '',   // Google Maps JavaScript API 키 (비우면 키 없는 임베드 지도 + 같은 인포윈도우)
+    kakaoJsKey: '',      // Kakao Developers JavaScript 키 (사이트 도메인 등록 필요)
+    applyEndpoint: 'https://script.google.com/macros/s/AKfycbwXU4yrpxhV0qmFfu6bnivtkGD4TV73e6xW16GxJ01vdy_Z3rw9uKj93R1v44Hy--_c/exec' // apps-script/Code.gs 웹 앱 (시트: 2026 송년행사 신청)
+  };
+  var PLACE = { name: '삼성소리샘복지관', lat: 37.4989636, lng: 126.9461588 };
+  var EVENT_TEL = '02-824-1411';
+
+  $(function () {
+    var pageUrl = location.href.split('#')[0];
+
+    /* ---------- 배경음악 (기본 꺼짐) ---------- */
+    var audio = document.getElementById('bgm-audio');
+    function setMusic(on) {
+      if (on) audio.play().then(function () { $('#bgm').attr('aria-pressed', 'true'); }, function () {});
+      else { audio.pause(); $('#bgm').attr('aria-pressed', 'false'); }
+    }
+    $('#bgm').on('click', function () { setMusic(audio.paused); });
+
+    /* ---------- 표지 → 하얗게 물들었다가 본문 ---------- */
+    $('#gate-open').on('click', function () {
+      setMusic(true); // 사용자 클릭 안에서 재생해야 브라우저가 허용함
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      $('#flash').stop(true).css('opacity', 0).show().animate({ opacity: 1 }, reduce ? 0 : 600, function () {
+        $('#gate').remove();
+        $('body').removeClass('is-gated');
+        window.scrollTo(0, 0);
+        $('#flash').animate({ opacity: 0 }, reduce ? 0 : 1000, function () { $(this).hide(); });
+        $('main section').first().attr('tabindex', '-1').css('outline', 'none').trigger('focus');
+      });
+    });
+
+    function toast(msg) {
+      var $t = $('#toast').text(msg).addClass('is-on');
+      clearTimeout($t.data('t'));
+      $t.data('t', setTimeout(function () { $t.removeClass('is-on'); }, 2200));
+    }
+
+    function legacyCopy(text) {
+      var $ta = $('<textarea readonly>').val(text).css({ position: 'fixed', opacity: 0 }).appendTo('body');
+      $ta[0].select();
+      var ok = document.execCommand('copy');
+      $ta.remove();
+      return ok;
+    }
+    function copy(text, msg) {
+      var fallback = function () { toast(legacyCopy(text) ? msg : '복사하지 못했어요. 직접 선택해서 복사해주세요'); };
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(function () { toast(msg); }, fallback);
+      else fallback();
+    }
+
+    $('[data-copy]').on('click', function () { copy($(this).data('copy'), $(this).data('msg')); });
+
+    /* ---------- 지도 ---------- */
+    var infoHtml =
+      '<div class="infowin-pos"><div class="infowin">' +
+      '<img src="images/4.webp" alt="삼성소리샘복지관 건물 외관">' +
+      '<div><strong>' + PLACE.name + '</strong><small>양녕로30길 19-4, 2층 사무실</small></div>' +
+      '</div></div>';
+
+    if (CONFIG.googleMapsKey) {
+      window.initMap = function () {
+        var pos = new google.maps.LatLng(PLACE.lat, PLACE.lng);
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: pos, zoom: 17, minZoom: 12, maxZoom: 20,
+          gestureHandling: 'none', zoomControl: true, // 드래그 없이 +/- 버튼으로만 확대/축소
+          mapTypeControl: false, streetViewControl: false, fullscreenControl: false
+        });
+        new google.maps.Marker({ position: pos, map: map, title: PLACE.name });
+
+        // 닫히지 않고 항상 떠 있는 커스텀 인포윈도우
+        var overlay = new google.maps.OverlayView();
+        var $box = $(infoHtml);
+        overlay.onAdd = function () { this.getPanes().floatPane.appendChild($box[0]); };
+        overlay.draw = function () {
+          var p = this.getProjection().fromLatLngToDivPixel(pos);
+          $box.css({ left: p.x, top: p.y });
+        };
+        overlay.onRemove = function () { $box.remove(); };
+        overlay.setMap(map);
+      };
+      $('<script>', { src: 'https://maps.googleapis.com/maps/api/js?key=' + CONFIG.googleMapsKey + '&callback=initMap', async: true }).appendTo('body');
+    } else {
+      var zoom = 17;
+      var embedSrc = function () { return 'https://maps.google.com/maps?q=' + PLACE.lat + ',' + PLACE.lng + '&z=' + zoom + '&hl=ko&output=embed'; };
+      $('#map-frame').addClass('is-embed');
+      $('#map').replaceWith('<iframe title="삼성소리샘복지관 위치 지도" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="' + embedSrc() + '"></iframe>');
+      $('#map-frame').append(infoHtml,
+        '<div class="zoom"><button type="button" data-zoom="1" aria-label="지도 확대">+</button><button type="button" data-zoom="-1" aria-label="지도 축소">−</button></div>');
+
+      // 핀이 항상 지도 중앙이라 인포윈도우도 그대로 핀 위에 있음
+      $('#map-frame').on('click', '[data-zoom]', function () {
+        zoom = Math.min(20, Math.max(12, zoom + $(this).data('zoom')));
+        $('#map-frame iframe').attr('src', embedSrc());
+        $('[data-zoom=1]').prop('disabled', zoom === 20);
+        $('[data-zoom=-1]').prop('disabled', zoom === 12);
+      });
+    }
+
+    $('#btn-naver').attr('href', 'https://map.naver.com/index.nhn?menu=route&pathType=0&elng=' + PLACE.lng + '&elat=' + PLACE.lat + '&etext=' + encodeURIComponent(PLACE.name));
+    $('#btn-kakao').attr('href', 'https://map.kakao.com/link/to/' + encodeURIComponent(PLACE.name) + ',' + PLACE.lat + ',' + PLACE.lng);
+
+    /* ---------- 공유 ---------- */
+    var shareData = { title: '2026 송년행사 “당신 덕분에”', text: '12월 5일(토) 10:00, 삼성소리샘복지관 송년행사에 초대합니다.', url: pageUrl };
+
+    if (CONFIG.kakaoJsKey && window.Kakao && !Kakao.isInitialized()) Kakao.init(CONFIG.kakaoJsKey);
+    $('#btn-kakao-share').on('click', function () {
+      if (!window.Kakao || !Kakao.isInitialized()) { toast('카카오톡 공유를 준비 중이에요. 링크 복사를 이용해주세요'); return; }
+      Kakao.Share.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: shareData.title, description: shareData.text,
+          imageUrl: new URL('images/1.webp', pageUrl).href,
+          link: { mobileWebUrl: pageUrl, webUrl: pageUrl }
+        },
+        buttons: [{ title: '초대장 보기', link: { mobileWebUrl: pageUrl, webUrl: pageUrl } }]
+      });
+    });
+    $('#btn-share').on('click', function () {
+      if (navigator.share) navigator.share(shareData).catch(function () {});
+      else copy(pageUrl, '이 브라우저는 공유하기를 지원하지 않아 링크를 복사했어요');
+    });
+    $('#btn-link').on('click', function () { copy(pageUrl, '초대장 링크를 복사했어요'); });
+
+    /* ---------- 신청 / 확인 ---------- */
+    $('[data-open]').on('click', function () {
+      var dlg = document.getElementById($(this).data('open'));
+      $(dlg).find('.result').text('');
+      dlg.showModal();
+    });
+    $('[data-close]').on('click', function () { this.closest('dialog').close(); });
+
+    function invalid(form) {
+      var $bad = $(form).find(':invalid').first();
+      if (!$bad.length) return false;
+      $bad.trigger('focus');
+      var msg = $bad.is(':checkbox')
+        ? '개인정보 수집·이용에 동의해주세요'
+        : $bad.closest('.field').find('label, legend').first().text().replace(/\s*\(.*\)/, '') + ' 항목을 확인해주세요';
+      $(form).find('.result').text(msg);
+      return true;
+    }
+    function post(payload) {
+      // body가 문자열이면 text/plain으로 가서 Apps Script에 preflight 없이 전송됨
+      return fetch(CONFIG.applyEndpoint, { method: 'POST', body: JSON.stringify(payload) }).then(function (r) { return r.json(); });
+    }
+
+    $('#form-apply').on('submit', function (e) {
+      e.preventDefault();
+      if (invalid(this)) return;
+      var form = this;
+      var f = Object.fromEntries(new FormData(form));
+      var $res = $(form).find('.result');
+
+      if (!CONFIG.applyEndpoint) {
+        var body = [f.name, f.birth, f.phone, f.family, f.sms].join('/');
+        location.href = 'sms:' + EVENT_TEL + '?&body=' + encodeURIComponent(body);
+        $res.html('문자 앱이 열리면 그대로 보내주세요.<br>열리지 않으면 ' + EVENT_TEL + '로 보내주세요.');
+        return;
+      }
+      var $btn = $(form).find('[type=submit]').prop('disabled', true).text('신청 중…');
+      post({ action: 'apply', name: f.name, birth: f.birth, phone: f.phone, family: f.family, sms: f.sms })
+        .then(function (r) {
+          $res.text(r.ok ? f.name + '님, 신청됐어요. 12월 5일에 만나요!' : (r.message || '신청하지 못했어요. ' + EVENT_TEL + '로 연락주세요'));
+          if (r.ok) form.reset();
+        })
+        .catch(function () { $res.text('연결이 끊겼어요. 잠시 뒤 다시 신청하거나 ' + EVENT_TEL + '로 연락주세요'); })
+        .finally(function () { $btn.prop('disabled', false).text('신청하기'); });
+    });
+
+    $('#form-check').on('submit', function (e) {
+      e.preventDefault();
+      if (invalid(this)) return;
+      var f = Object.fromEntries(new FormData(this));
+      var $res = $(this).find('.result');
+
+      if (!CONFIG.applyEndpoint) {
+        $res.html('신청 여부는 <a href="tel:028241411">' + EVENT_TEL + '</a>로 확인해드려요.');
+        return;
+      }
+      var $btn = $(this).find('[type=submit]').prop('disabled', true).text('확인 중…');
+      post({ action: 'check', name: f.name, phone: f.phone })
+        .then(function (r) {
+          $res.text(r.found ? f.name + '님은 신청되어 있어요 (' + r.family + ')' : '신청 내역이 없어요. 이름과 번호를 다시 확인해주세요');
+        })
+        .catch(function () { $res.text('연결이 끊겼어요. 잠시 뒤 다시 확인해주세요'); })
+        .finally(function () { $btn.prop('disabled', false).text('확인하기'); });
+    });
+  });
+</script>
+</body>
+</html>
