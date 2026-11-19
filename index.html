@@ -634,7 +634,7 @@
       var $btn = $(this).find('[type=submit]').prop('disabled', true).text('확인 중…');
       post({ action: 'check', name: f.name, phone: f.phone })
         .then(function (r) {
-          $res.text(r.found ? f.name + '님은 신청되어 있어요. 12월 5일에 만나요!' : '신청 내역이 없어요. 이름과 번호를 다시 확인해주세요');
+          $res.text(r.found ? f.name + '님은 신청되어 있어요. 12월 5일에 만나요!' : (r.message || '신청 내역이 없어요. 이름과 번호를 다시 확인해주세요'));
         })
         .catch(function () { $res.text('연결이 끊겼어요. 잠시 뒤 다시 확인해주세요'); })
         .finally(function () { $btn.prop('disabled', false).text('확인하기'); });
