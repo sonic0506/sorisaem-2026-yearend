@@ -11,7 +11,7 @@ function doPost(e) {
   var found = rows.filter(function (r) { return r[1] === name && String(r[3]).replace(/\D/g, '') === phone; })[0];
 
   if (d.action === 'check') {
-    return json(found ? { found: true, family: found[4] } : { found: false });
+    return json({ found: !!found }); // 신청 여부만 알려줌
   }
   if (!name || !/^01\d{8,9}$/.test(phone)) return json({ ok: false, message: '이름과 핸드폰번호를 확인해주세요' });
   if (new Date() >= DEADLINE) return json({ ok: false, message: '신청이 마감됐어요. 02-824-1411로 문의해주세요' });
@@ -21,7 +21,7 @@ function doPost(e) {
   lock.waitLock(10000);
   if (sheet.getLastRow() === 0) sheet.appendRow(['신청일시', '이름', '생년월일', '핸드폰', '참여가족', '문자수신']);
   // 앞에 ' 를 붙여 수식 주입 방지 + 0으로 시작하는 번호 유지
-  sheet.appendRow([new Date(), name, "'" + d.birth, "'" + phone, "'" + d.family, d.sms === '네' ? '네' : '아니오']);
+  sheet.appendRow([new Date(), "'" + name, "'" + d.birth, "'" + phone, "'" + d.family, d.sms === '네' ? '네' : '아니오']);
   lock.releaseLock();
   return json({ ok: true });
 }
