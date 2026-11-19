@@ -87,36 +87,19 @@
   .sprig--bl { bottom: -50px; left: -22px; transform: scaleY(-1) rotate(10deg); }
   .sprig--br { bottom: -50px; right: -22px; transform: scale(-1, -1) rotate(10deg); }
 
-  .lead { font-family: "Jua", sans-serif; font-size: 1.5rem; margin: 0 0 1.4rem; color: var(--ink); }
-  .contact { margin: 0 auto 1.6rem; display: grid; gap: .5rem; font-size: 1.12rem; }
-  .contact div { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 .5em; }
-  .contact dt { font-family: "Jua", sans-serif; }
-  .contact dd { margin: 0; }
-  .contact a { color: var(--holly); font-weight: 700; text-underline-offset: 3px; }
-  .deadline {
-    display: inline-block; margin: 0 0 1.2rem; padding: .35em 1em;
-    font-family: "Jua", sans-serif; font-size: 1.1rem; color: #fff;
-    background: var(--holly); border-radius: 999px;
+  .lead { font-size: 1.3rem; margin: 0 0 1.6rem; color: var(--ink); }
+  .ask-title { margin-top: 2.2em; }
+  .ask {
+    display: block; max-width: 460px; margin: 0 auto 1.8rem; padding: .5em 1em; border-radius: 14px;
+    font: 400 1.35rem/1.3 "Jua", sans-serif; color: #fff; text-decoration: none;
+    background: #d13a34; box-shadow: 0 3px 0 #7c1520;
   }
-
-  .divider { display: flex; align-items: center; justify-content: space-between; width: min(100%, 360px); height: 10px; margin: 1.4rem auto; position: relative; }
-  .divider::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--holly); opacity: .7; }
-  .divider i { position: relative; width: 9px; height: 9px; background: var(--holly); transform: rotate(45deg); }
-  .divider i:first-child { margin-left: 18%; }
-  .divider i:last-child { margin-right: 18%; }
-
-  .howto p { margin: 0; font-size: 1.1rem; }
-  .howto .label { font-family: "Jua", sans-serif; font-size: 1.25rem; margin-bottom: .2rem; }
-  .sample {
-    margin: 1.4rem auto 0; padding: 14px 18px; max-width: 420px;
-    border: 1.5px dashed rgba(179, 32, 46, .5); border-radius: 14px;
-    font-size: 1.05rem; background: rgba(255, 255, 255, .45);
-  }
-  .howto .sample { margin: 1.4rem auto 0; }
+  .ask:hover { background: #c4283a; }
+  .howto p { margin: 0; font-size: 1.1rem; color: #1d1410; }
+  .howto .label { font-family: "Jua", sans-serif; font-size: 1.2rem; margin-top: 1.4rem; }
   .nw { white-space: nowrap; }
-  .sample strong { font-family: "Jua", sans-serif; font-weight: 400; display: block; color: var(--holly); }
 
-  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 2rem; }
+  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 460px; margin: 0 auto; }
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: .4em;
     min-height: 54px; padding: 0 16px; border-radius: 12px;
@@ -124,6 +107,7 @@
     border: 2px solid transparent; transition: transform .15s ease, background-color .15s ease;
   }
   .btn:active { transform: translateY(1px); }
+  .btn:disabled { background: #b9ada0; color: #fff; box-shadow: none; cursor: default; transform: none; }
   .btn--holly { background: var(--holly); color: #fff; box-shadow: 0 3px 0 #7c1520; }
   .btn--holly:hover { background: #c4283a; }
   .btn--pine { background: var(--pine); color: var(--paper-hi); box-shadow: 0 3px 0 #0d1d14; }
@@ -176,16 +160,6 @@
   .btn--naver:hover { background: #02b351; }
   .btn--kakao { background: #fee500; color: #191600; }
   .btn--kakao:hover { background: #f5dc00; }
-
-  /* ---------- 5. 공유 ---------- */
-  .share { padding: 64px 0 72px; text-align: center; color: var(--paper-hi); }
-  .share h2 { color: var(--paper-hi); font-size: clamp(2rem, 8.5vw, 2.7rem); }
-  .share p { margin: 0 0 1.6rem; font-size: 1.08rem; opacity: .9; }
-  .share-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .share-actions .btn { flex-direction: column; min-height: 92px; gap: .55em; font-size: 1rem; padding: 0 8px; }
-  .share-actions svg { width: 28px; height: 28px; }
-  .btn--glass { background: rgba(255, 255, 255, .1); color: #fff; border-color: rgba(255, 255, 255, .35); }
-  .btn--glass:hover { background: rgba(255, 255, 255, .18); }
 
   /* ---------- 모달 ---------- */
   dialog {
@@ -290,7 +264,6 @@
     .gate-inner { padding: 0 36px; }
     .card { padding: 52px 18px 40px; }
     .map-actions { grid-template-columns: 1fr; }
-    .share-actions .btn { font-size: .92rem; }
   }
   @media (prefers-reduced-motion: reduce) {
     .bulb { animation: none; }
@@ -344,7 +317,7 @@
   <section class="band band--felt" aria-label="초대장">
     <div class="wrap poster">
       <img src="images/1.webp" width="1080" height="1350"
-        alt="2026 송년행사 “당신 덕분에”. 12월 5일(토) 10:00–12:00. 우리 삼성소리샘복지관을 이용해주신 많은 이용자분들께 감사드리며 송년행사에 안내합니다. 신청기간: 11/25(수)까지 문자, 전화, 방문 신청">
+        alt="2026 송년행사 “당신 덕분에”. 12월 5일(토) 10:00–12:00. 올 한 해 삼성소리샘복지관과 함께해 주신 이용자 여러분께 감사의 마음을 전하며, 송년행사 ‘당신 덕분에’에 초대합니다. 신청기간: 11/25(수)까지">
     </div>
   </section>
 
@@ -352,7 +325,7 @@
   <section class="band band--paper" aria-label="행사 소개">
     <div class="wrap poster">
       <img src="images/2.webp" width="1080" height="1350" loading="lazy"
-        alt="2026 송년행사. 당신 덕분에, 더 따뜻한 연말. 눈앞에서 펼쳐지는 신나는 마술쇼, 함께 나누는 정성껏 차린 다과, 그리고 한 해의 감사한 마음을 담아 준비한 풍성한 선물까지! 즐길 거리와 맛있는 간식이 가득한 소리샘 송년행사에 여러분을 초대합니다. 사진: 눈이 즐거운 마술쇼와 다양한 공연, 정성껏 차린 다과, 풍성하고 다양한 선물">
+        alt="2026 송년행사. 당신 덕분에, 더 따뜻한 연말. 눈앞에서 펼쳐지는 신나는 마술쇼, 함께 나누는 정성껏 차린 다과, 그리고 한 해의 감사한 마음을 담아 준비한 풍성한 선물까지! 즐길 거리와 맛있는 간식이 가득한 소리샘 송년행사에 여러분을 초대합니다. 사진: 눈이 즐거운 마술쇼와 아이들이 준비한 합창, 낭독극, 정성껏 차린 다과, 풍성하고 다양한 선물">
     </div>
   </section>
 
@@ -377,27 +350,22 @@
         <svg class="sprig sprig--bl" aria-hidden="true"><use href="#holly"/></svg>
         <svg class="sprig sprig--br" aria-hidden="true"><use href="#holly"/></svg>
 
-        <h2 id="apply-title">신청방법</h2>
-        <p class="lead">문자, 전화, 방문 신청</p>
-        <p class="deadline">11월 25일(수)까지 신청</p>
-
-        <dl class="contact">
-          <div><dt>전화&amp;문자</dt><dd><a href="tel:028241411">02-824-1411</a></dd></div>
-          <div><dt>방문</dt><dd>삼성소리샘복지관 2층 사무실</dd></div>
-          <div><dt>담당</dt><dd>조수연 사회복지사</dd></div>
-        </dl>
-
-        <div class="divider" aria-hidden="true"><i></i><i></i><i></i></div>
-
-        <div class="howto">
-          <p class="label">이렇게 보내주세요!</p>
-          <p>이름 / 생년월일 / 핸드폰번호 /<br>참여 가족 수 / 문자 수신 동의</p>
-          <p class="sample"><strong>문자 예시</strong><span class="nw">홍길동/99.12.05./</span><span class="nw">010-1234-5678</span><br><span class="nw">/나, 엄마, 아빠 3명/네</span></p>
-        </div>
-
+        <h2 id="apply-title">신청 방법</h2>
+        <p class="lead">11월 25일(수)까지 온라인 신청</p>
         <div class="actions">
           <button type="button" class="btn btn--holly" data-open="dlg-apply">참가 신청하기</button>
-          <button type="button" class="btn btn--pine" data-open="dlg-check">신청확인</button>
+          <button type="button" class="btn btn--pine" data-open="dlg-check">신청 확인</button>
+        </div>
+
+        <h2 class="ask-title">문의</h2>
+        <a class="ask" href="tel:028241411">조수연 사회복지사 <span class="nw">02-824-1411</span></a>
+
+        <div class="howto">
+          <p>온라인 신청이 어렵다면 문자, 전화, 방문 신청이 가능합니다.</p>
+          <p class="label">이렇게 보내주세요!</p>
+          <p>이름 / 생년월일 / 핸드폰번호 / 참여 가족 / 문자 수신 동의</p>
+          <p class="label">문자 예시</p>
+          <p><span class="nw">홍길동 / 99.12.05. /</span> <span class="nw">010-1234-5678</span><br><span class="nw">/ 나, 엄마, 아빠 3명 / 네</span></p>
         </div>
       </div>
     </div>
@@ -419,28 +387,6 @@
       </div>
     </div>
   </section>
-
-  <!-- 5. 공유 -->
-  <section class="band band--felt share" aria-labelledby="share-title">
-    <div class="wrap">
-      <h2 id="share-title">초대장 공유하기</h2>
-      <p>함께 오고 싶은 분께 초대장을 보내주세요</p>
-      <div class="share-actions">
-        <button type="button" class="btn btn--kakao" id="btn-kakao-share">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
-          카카오톡 공유
-        </button>
-        <button type="button" class="btn btn--glass" id="btn-share">
-          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
-          공유하기
-        </button>
-        <button type="button" class="btn btn--glass" id="btn-link">
-          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
-          링크 복사
-        </button>
-      </div>
-    </div>
-  </section>
 </main>
 
 <!-- 참가 신청 -->
@@ -449,8 +395,8 @@
     <h3 id="dlg-apply-title">참가 신청하기</h3>
     <p class="hint">11월 25일(수)까지 받아요</p>
     <div class="field"><label for="a-name">이름</label><input type="text" id="a-name" name="name" required autocomplete="name"></div>
-    <div class="field"><label for="a-birth">생년월일 (예: 99.12.05)</label><input type="text" id="a-birth" name="birth" required inputmode="numeric" placeholder="99.12.05"></div>
-    <div class="field"><label for="a-phone">핸드폰번호</label><input type="tel" id="a-phone" name="phone" required autocomplete="tel" placeholder="010-1234-5678" pattern="01[0-9]-?[0-9]{3,4}-?[0-9]{4}"></div>
+    <div class="field"><label for="a-birth">생년월일 (예: 99.12.05)</label><input type="text" id="a-birth" name="birth" required inputmode="decimal" maxlength="10" placeholder="99.12.05"></div>
+    <div class="field"><label for="a-phone">핸드폰번호</label><input type="tel" id="a-phone" name="phone" required autocomplete="tel" inputmode="numeric" maxlength="13" placeholder="010-1234-5678" pattern="01[0-9]-?[0-9]{3,4}-?[0-9]{4}"></div>
     <div class="field"><label for="a-family">참여 가족 (예: 나, 엄마, 아빠 3명)</label><input type="text" id="a-family" name="family" required></div>
     <fieldset class="field">
       <legend>문자 수신 동의</legend>
@@ -475,7 +421,7 @@
     <h3 id="dlg-check-title">신청확인</h3>
     <p class="hint">신청할 때 적은 이름과 번호를 입력하세요</p>
     <div class="field"><label for="c-name">이름</label><input type="text" id="c-name" name="name" required autocomplete="name"></div>
-    <div class="field"><label for="c-phone">핸드폰번호</label><input type="tel" id="c-phone" name="phone" required autocomplete="tel" placeholder="010-1234-5678" pattern="01[0-9]-?[0-9]{3,4}-?[0-9]{4}"></div>
+    <div class="field"><label for="c-phone">핸드폰번호</label><input type="tel" id="c-phone" name="phone" required autocomplete="tel" inputmode="numeric" maxlength="13" placeholder="010-1234-5678" pattern="01[0-9]-?[0-9]{3,4}-?[0-9]{4}"></div>
     <div class="dlg-actions">
       <button type="button" class="btn btn--line" data-close>닫기</button>
       <button type="submit" class="btn btn--pine">확인하기</button>
@@ -516,20 +462,17 @@
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" crossorigin="anonymous"></script>
 <script>
   // 운영 전에 채워주세요
   var CONFIG = {
     googleMapsKey: '',   // Google Maps JavaScript API 키 (비우면 키 없는 임베드 지도 + 같은 인포윈도우)
-    kakaoJsKey: '4f131acdbdb6a79d672e6899c8944908', // Kakao Developers 앱 1656936 (도메인: https://sonic0506.github.io)
     applyEndpoint: 'https://script.google.com/macros/s/AKfycbwXU4yrpxhV0qmFfu6bnivtkGD4TV73e6xW16GxJ01vdy_Z3rw9uKj93R1v44Hy--_c/exec' // apps-script/Code.gs 웹 앱 (시트: 2026 송년행사 신청)
   };
   var PLACE = { name: '삼성소리샘복지관', lat: 37.4989636, lng: 126.9461588 };
   var EVENT_TEL = '02-824-1411';
+  var DEADLINE = new Date('2026-11-26T00:00:00+09:00'); // apps-script/Code.gs 와 같은 마감 시각
 
   $(function () {
-    var pageUrl = location.href.split('#')[0];
-
     /* ---------- 배경음악 (기본 꺼짐) ---------- */
     var audio = document.getElementById('bgm-audio');
     function setMusic(on) {
@@ -621,35 +564,27 @@
     $('#btn-naver').attr('href', 'https://map.naver.com/index.nhn?menu=route&pathType=0&elng=' + PLACE.lng + '&elat=' + PLACE.lat + '&etext=' + encodeURIComponent(PLACE.name));
     $('#btn-kakao').attr('href', 'https://map.kakao.com/link/to/' + encodeURIComponent(PLACE.name) + ',' + PLACE.lat + ',' + PLACE.lng);
 
-    /* ---------- 공유 ---------- */
-    var shareData = { title: '2026 송년행사 “당신 덕분에”', text: '12월 5일(토) 10:00, 삼성소리샘복지관 송년행사에 초대합니다.', url: pageUrl };
-
-    if (CONFIG.kakaoJsKey && window.Kakao && !Kakao.isInitialized()) Kakao.init(CONFIG.kakaoJsKey);
-    $('#btn-kakao-share').on('click', function () {
-      if (!window.Kakao || !Kakao.isInitialized()) { toast('카카오톡 공유를 준비 중이에요. 링크 복사를 이용해주세요'); return; }
-      Kakao.Share.sendDefault({
-        objectType: 'feed',
-        content: {
-          title: shareData.title, description: shareData.text,
-          imageUrl: new URL('images/1.webp', pageUrl).href,
-          link: { mobileWebUrl: pageUrl, webUrl: pageUrl }
-        },
-        buttons: [{ title: '초대장 보기', link: { mobileWebUrl: pageUrl, webUrl: pageUrl } }]
-      });
-    });
-    $('#btn-share').on('click', function () {
-      if (navigator.share) navigator.share(shareData).catch(function () {});
-      else copy(pageUrl, '이 브라우저는 공유하기를 지원하지 않아 링크를 복사했어요');
-    });
-    $('#btn-link').on('click', function () { copy(pageUrl, '초대장 링크를 복사했어요'); });
-
     /* ---------- 신청 / 확인 ---------- */
+    if (new Date() >= DEADLINE) $('[data-open=dlg-apply]').prop('disabled', true).text('신청이 마감됐어요');
+
     $('[data-open]').on('click', function () {
       var dlg = document.getElementById($(this).data('open'));
       $(dlg).find('.result').text('');
       dlg.showModal();
     });
     $('[data-close]').on('click', function () { this.closest('dialog').close(); });
+
+    // 핸드폰번호: 숫자만 남기고 010-1234-5678 (옛 10자리 번호는 011-123-4567) 형태로 '-' 자동 입력
+    $('input[type=tel]').on('input', function () {
+      var d = this.value.replace(/\D/g, '').slice(0, 11);
+      var mid = d.indexOf('010') === 0 || d.length === 11 ? 4 : 3;
+      this.value = [d.slice(0, 3), d.slice(3, 3 + mid), d.slice(3 + mid)].filter(Boolean).join('-');
+    });
+    // 생년월일: 숫자와 '.' 만
+    $('#a-birth').on('input', function () {
+      var v = this.value.replace(/[^\d.]/g, '');
+      if (v !== this.value) this.value = v; // 바뀔 때만 넣어야 커서가 끝으로 튀지 않음
+    });
 
     function invalid(form) {
       var $bad = $(form).find(':invalid').first();
