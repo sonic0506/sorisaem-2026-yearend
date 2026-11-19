@@ -64,6 +64,26 @@
     text-align: center;
   }
 
+  /* ---------- 2-1. 일정표 ---------- */
+  .schedule { padding: 72px 0 80px; }
+  .sched { list-style: none; max-width: 420px; margin: .4rem auto 0; padding: 0; text-align: left; position: relative; }
+  /* 시간·제목 첫 줄 높이(1.6rem)를 맞추고, 점은 그 줄 가운데(.7rem + .8rem)에 둔다 */
+  .sched > li { display: grid; grid-template-columns: 5rem 1fr; column-gap: 32px; padding: .7rem 0; position: relative; }
+  .sched > li:not(:last-child)::after { content: ""; position: absolute; left: calc(5rem + 15px); top: 1.5rem; height: 100%; border-left: 2px dotted rgba(30, 58, 44, .45); }
+  .sched > li::before {
+    content: ""; position: absolute; z-index: 1; left: calc(5rem + 10px); top: calc(1.5rem - 6px);
+    width: 12px; height: 12px; border-radius: 50%; background: var(--holly);
+    box-shadow: 0 0 0 3px var(--paper-hi), inset -2px -2px 0 rgba(0, 0, 0, .18);
+  }
+  .sched > li:nth-child(even)::before { background: var(--pine); }
+  .sched .t { font-family: "Jua", sans-serif; line-height: 1.15; color: var(--pine); text-align: right; }
+  .sched .t b { display: block; font-weight: 400; font-size: 1.4rem; line-height: 1.6rem; }
+  .sched .t small { font-size: .95rem; opacity: .7; }
+  .sched .ev { font-size: 1.15rem; line-height: 1.6rem; color: #1d1410; }
+  .sched .ev em { display: block; font-style: normal; font-size: 1rem; opacity: .75; }
+  .sched ul { list-style: none; margin: .35rem 0 0; padding: 0; }
+  .sched ul li::before { content: "★"; color: var(--gold); margin-right: .4em; font-size: .85em; }
+
   /* ---------- 3. 신청방법 ---------- */
   .apply { padding: 72px 0 80px; overflow: hidden; }
   .lights { position: absolute; left: 0; right: 0; top: 0; height: 64px; pointer-events: none; }
@@ -326,6 +346,30 @@
     <div class="wrap poster">
       <img src="images/2.webp" width="1080" height="1350" loading="lazy"
         alt="2026 송년행사. 당신 덕분에, 더 따뜻한 연말. 눈앞에서 펼쳐지는 신나는 마술쇼, 함께 나누는 정성껏 차린 다과, 그리고 한 해의 감사한 마음을 담아 준비한 풍성한 선물까지! 즐길 거리와 맛있는 간식이 가득한 소리샘 송년행사에 여러분을 초대합니다. 사진: 눈이 즐거운 마술쇼와 아이들이 준비한 합창, 낭독극, 정성껏 차린 다과, 풍성하고 다양한 선물">
+    </div>
+  </section>
+
+  <!-- 2-1. 일정표 -->
+  <section class="band band--felt schedule" aria-labelledby="sched-title">
+    <div class="wrap">
+      <div class="card">
+        <svg class="sprig sprig--tl" aria-hidden="true"><use href="#holly"/></svg>
+        <svg class="sprig sprig--tr" aria-hidden="true"><use href="#holly"/></svg>
+        <svg class="sprig sprig--bl" aria-hidden="true"><use href="#holly"/></svg>
+        <svg class="sprig sprig--br" aria-hidden="true"><use href="#holly"/></svg>
+
+        <h2 id="sched-title">일정표</h2>
+        <ol class="sched">
+          <li><span class="t"><b>09:30</b><small>~10:00</small></span><span class="ev">접수</span></li>
+          <li><span class="t"><b>10:00</b><small>~10:10</small></span><span class="ev">관장님 인사말 및 영상 시청</span></li>
+          <li><span class="t"><b>10:10</b><small>~10:30</small></span><span class="ev">우수이용자 시상</span></li>
+          <li><span class="t"><b>10:30</b><small>~11:10</small></span><span class="ev">공연 관람<em>합창, 낭독극, 마술공연</em>
+            <ul><li>다과 즐기기</li><li>럭키드로우</li></ul></span></li>
+          <li><span class="t"><b>11:10</b><small>~11:30</small></span><span class="ev">함께 만드는 감사 트리</span></li>
+          <li><span class="t"><b>11:30</b><small>~11:40</small></span><span class="ev">행운권 추첨</span></li>
+          <li><span class="t"><b>11:40</b><small>~</small></span><span class="ev">귀가 및 기념품 수령</span></li>
+        </ol>
+      </div>
     </div>
   </section>
 
