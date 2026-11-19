@@ -107,7 +107,7 @@
     border: 2px solid transparent; transition: transform .15s ease, background-color .15s ease;
   }
   .btn:active { transform: translateY(1px); }
-  .btn:disabled { background: #b9ada0; color: #fff; box-shadow: none; cursor: default; transform: none; }
+  .btn:disabled, .btn:disabled:hover { background: #b9ada0; color: #fff; box-shadow: none; cursor: default; transform: none; }
   .btn--holly { background: var(--holly); color: #fff; box-shadow: 0 3px 0 #7c1520; }
   .btn--holly:hover { background: #c4283a; }
   .btn--pine { background: var(--pine); color: var(--paper-hi); box-shadow: 0 3px 0 #0d1d14; }
@@ -361,7 +361,7 @@
         <a class="ask" href="tel:028241411">조수연 사회복지사 <span class="nw">02-824-1411</span></a>
 
         <div class="howto">
-          <p>온라인 신청이 어렵다면 문자, 전화, 방문 신청이 가능합니다.</p>
+          <p>온라인 신청이 어렵다면 문자, 전화 신청이 가능합니다.</p>
           <p class="label">이렇게 보내주세요!</p>
           <p>이름 / 생년월일 / 핸드폰번호 / 참여 가족 / 문자 수신 동의</p>
           <p class="label">문자 예시</p>
@@ -470,7 +470,6 @@
   };
   var PLACE = { name: '삼성소리샘복지관', lat: 37.4989636, lng: 126.9461588 };
   var EVENT_TEL = '02-824-1411';
-  var DEADLINE = new Date('2026-11-26T00:00:00+09:00'); // apps-script/Code.gs 와 같은 마감 시각
 
   $(function () {
     /* ---------- 배경음악 (기본 꺼짐) ---------- */
@@ -565,8 +564,6 @@
     $('#btn-kakao').attr('href', 'https://map.kakao.com/link/to/' + encodeURIComponent(PLACE.name) + ',' + PLACE.lat + ',' + PLACE.lng);
 
     /* ---------- 신청 / 확인 ---------- */
-    if (new Date() >= DEADLINE) $('[data-open=dlg-apply]').prop('disabled', true).text('신청이 마감됐어요');
-
     $('[data-open]').on('click', function () {
       var dlg = document.getElementById($(this).data('open'));
       $(dlg).find('.result').text('');

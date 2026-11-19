@@ -1,6 +1,5 @@
 // 구글 시트 > 확장 프로그램 > Apps Script 에 붙여넣고
 // 배포 > 새 배포 > 웹 앱 (실행: 나, 액세스: 모든 사용자) → URL을 index.html CONFIG.applyEndpoint 에 입력
-var DEADLINE = new Date('2026-11-26T00:00:00+09:00');
 
 function doPost(e) {
   var d = JSON.parse(e.postData.contents);
@@ -14,7 +13,6 @@ function doPost(e) {
     return json({ found: !!found }); // 신청 여부만 알려줌
   }
   if (!name || !/^01\d{8,9}$/.test(phone)) return json({ ok: false, message: '이름과 핸드폰번호를 확인해주세요' });
-  if (new Date() >= DEADLINE) return json({ ok: false, message: '신청이 마감됐어요. 02-824-1411로 문의해주세요' });
   if (found) return json({ ok: false, message: '이미 신청되어 있어요' });
 
   var lock = LockService.getScriptLock();
